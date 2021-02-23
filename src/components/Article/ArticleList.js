@@ -34,10 +34,24 @@ function ArticleList() {
       const res = await axios.get(
         "https://jsonplaceholder.typicode.com/posts?_limit=5"
       );
-      console.log(res);
+      // console.log(response);
+      // console.log("Articles fetched");
+      set_articles(res.data);
     }
     doSomeDataFetching();
   }, []);
+
+  // console.log("WHAT IS ARTICLES?", articles);
+
+  // our goal => fetch an array of articles and display them.
+  // fetch some data => axios.
+  // Something to trigger this request => useEffect
+  //    => trigger after the component is mounted
+  // Some state to store this data.
+
+  // if (articles.length) {
+  //   return <div>Loading...</div>;
+  // }
 
   const cardButton = () => {
     set_articles(articles);
